@@ -2,37 +2,30 @@ version: 0.2
 
 phases:
   install:
+    
     runtime-versions:
       nodejs: 14
+    
     commands:
-      - echo Installing dependencies...
-      - yum install -y nginx  # Install Nginx
-      # Uncomment and add any other dependencies you might need
-      # - npm install
+      - echo Installing NGINX
+      - sudo apt-get update
+      - sudo apt-get install nginx -y 
 
   pre_build:
     commands:
       - echo Starting Nginx...
-      - service nginx start  # Start Nginx service
+      - sudo service nginx start  # Start Nginx service
 
   build:
     commands:
-      - echo Building the website...
-      # Add your build commands if you have any
-      # - npm run build
-      - mkdir -p /usr/share/nginx/html  # Create directory if it doesn't exist
-      - cp -r . /usr/share/nginx/html/  # Copy all files to the Nginx directory
-
+      - echo Build started on 'date'
+      - cp index.html /var/www/html/
+  
   post_build:
     commands:
       - echo Stopping Nginx...
-      - service nginx stop  # Stop Nginx service
-      - echo Packaging the website...
-      - cd /usr/share/nginx/html
-      - zip -r /tmp/website-build.zip .  # Archive the website files
+      - sudo service nginx stop 
 
 artifacts:
   files:
-    - /tmp/website-build.zip  # Path to the artifact
-  discard-paths: yes
-  name: 'website-build.zip'
+    - '**/*'
