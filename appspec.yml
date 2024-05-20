@@ -1,0 +1,14 @@
+version: 1.0
+os: Linux
+files:
+  - source: /
+    destination: /var/www/html
+hooks:
+  AfterInstall:
+    - location: scripts/install_ngnix.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/start_ngnix.sh
+      timeout: 300
+      runas: root
