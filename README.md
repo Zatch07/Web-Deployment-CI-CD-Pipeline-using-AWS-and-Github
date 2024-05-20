@@ -21,3 +21,19 @@
   8. If it goes smoothly you are ready to go to the next phase.
 
 ## Create an EC2 machine to run your deployment instance.
+  1. Create a new EC2 instance with whatever configuration you would like to run your appication on.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/16d5e225-65b9-4b93-a7a0-7be91f70c6a9)
+  2. Create a new role for the EC2 service to be able to communicate with other service that are set up.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/68100c06-3f40-491f-87ac-f43e91f616d2)
+
+## Create a Deployment group for the application
+  1. Go to AWS CodeDeploy and create an application.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/5624a1c7-179f-477e-a6b8-cd7ef4714cb9)
+  2. Under the application create a new deployment group and give it a name and add the service role with the following permissions.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/7c9be610-3a54-4f35-8834-234dbb2d44c8)
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/8e74d73e-a462-4b57-9a8a-d051d39100ed)
+  3. Choose the type of deployment you would like, I'm chosing 'in place' for simple implementation.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/29cbd1e0-d98d-4bee-a2fe-a482a9cac7f4)
+  4. Set up the environment configuration as Amazon EC2 Instances. Use the key as Name and add the name of the EC2 instance that we created before.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/c43bdbb4-a516-4400-bd76-fd18fceae8c1)
+  5. 
