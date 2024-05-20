@@ -5,10 +5,17 @@ files:
     destination: /var/www/html
 hooks:
   AfterInstall:
-    - location: scripts/install_ngnix.sh
+    - location: /dev/null
       timeout: 300
       runas: root
+      script: |
+        # Install Nginx
+        sudo apt-get update
+        sudo apt-get install -y nginx
   AfterInstall:
-    - location: scripts/start_ngnix.sh
+    - location: /dev/null
       timeout: 300
       runas: root
+      script: |
+        # Start Nginx
+        sudo service nginix start
