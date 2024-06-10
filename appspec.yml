@@ -4,18 +4,15 @@ files:
   - source: /
     destination: /var/www/html
 hooks:
-  AfterInstall:
-    - location: /dev/null
+  BeforeInstall:
+    - location: scripts/set_permissions.sh
       timeout: 300
       runas: root
-      script: |
-        # Install Nginx
-        sudo apt-get update
-        sudo apt-get install -y nginx
   AfterInstall:
-    - location: /dev/null
+    - location: scripts/install_nginx.sh
       timeout: 300
       runas: root
-      script: |
-        # Start Nginx
-        sudo service nginix start
+  AfterInstall:
+    - location: scripts/start_nginx.sh
+      timeout: 300
+      runas: root
