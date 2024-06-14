@@ -2,31 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: \var\www\html
+    destination: /var/www/html
 hooks:
-  BeforeInstall:
-    - script: 
-        content: |
-          #!/bin/bash
-          # Give execute permissions to the scripts
-          chmod +x /var/www/html/scripts/install_nginx.sh
-          chmod +x /var/www/html/scripts/start_nginx.sh
-      timeout: 300
-      runas: root
   AfterInstall:
-    - script: 
-        content: |
-          #!/bin/bash
-          # Install nginx
-          apt-get update
-          apt-get install -y nginx
+    - location: scripts/install_nginx.sh
       timeout: 300
       runas: root
-    - script: 
-        content: |
-          #!/bin/bash
-          # Start nginx
-          systemctl start nginx
-          systemctl enable nginx
+  ApplicationStart: 
+    - location: scripts/start_nginx.sh
       timeout: 300
       runas: root
