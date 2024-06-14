@@ -5,7 +5,7 @@ files:
     destination: /var/www/html
 hooks:
   BeforeInstall:
-    - location:
+    - script: 
         content: |
           #!/bin/bash
           # Give execute permissions to the scripts
@@ -14,18 +14,19 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location:
+    - script: 
         content: |
           #!/bin/bash
-          # Install Nginx
-          sudo apt-get update
-          sudo apt-get install -y nginx
+          # Install nginx
+          apt-get update
+          apt-get install -y nginx
       timeout: 300
       runas: root
-    - location:
+    - script: 
         content: |
           #!/bin/bash
-          # Start Nginx
-          sudo service nginx start
+          # Start nginx
+          systemctl start nginx
+          systemctl enable nginx
       timeout: 300
       runas: root
