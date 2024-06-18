@@ -36,4 +36,25 @@
   ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/29cbd1e0-d98d-4bee-a2fe-a482a9cac7f4)
   4. Set up the environment configuration as Amazon EC2 Instances. Use the key as Name and add the name of the EC2 instance that we created before.
   ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/c43bdbb4-a516-4400-bd76-fd18fceae8c1)
-  5. 
+  5. Set the deployment type to all at once or can change to any of the pre-configured deployment types according to your needs.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/6f04cb25-75fc-4d5f-80c1-f095c0346fca)
+  6. You can enable the load balancing if you think you're going to get huge traffic, for this instance we are going to keep it disabled, and save the changes.
+  7. You can check if your deployment is working fine as it will start the deployment for the fist time when you save it.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/347eceb9-ca4d-450e-82fc-1394bc3b073d)
+  8. If everything goes fine, you can check your deployed website on the public ip of your ec2 instance. First Connect to your EC2 instance with cloud connect.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/33ca5468-67de-4a83-a3f9-a13c90c8cf31)
+  9. Go to the public ip and open in new tab. You should see you webpage deployed there.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/f90c2cfe-5d88-426b-9497-6a7ecfc7d714)
+  10. If you encounter any problems in the deployment phase you can check the logs of your EC2 instance for debugging using this command:
+
+  `sudo tail -n 20 /var/log/aws/codedeploy-agent/codedeploy-agent.log`
+
+  this should give your previous 20 logs, you can edit this command to get more.
+
+## Create a new pipeline with AWS CodePipeline 
+  1. Go to CodePipeline and create a new pipeline.
+  2. Give the pipeline a Name and set the pipeline type as V2 so that it can take actions on new pull requests or new push to the repository.
+  
+  3. 
+  ![Uploading image.png…]()
+
