@@ -54,7 +54,15 @@
 ## Create a new pipeline with AWS CodePipeline 
   1. Go to CodePipeline and create a new pipeline.
   2. Give the pipeline a Name and set the pipeline type as V2 so that it can take actions on new pull requests or new push to the repository.
-  
-  3. 
-  ![Uploading image.png…]()
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/370721ca-2fdd-4b22-ac1f-55c3dc55d303)
+  3. Add the source from where you'll be pulling in code from. In this case it is github, and give all the information related to the repository.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/c9f18679-2799-462a-a479-d5c72e24a11e)
+  4. Add the CodeBuild project Name for the build stage.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/a90ee42f-e0d1-41c5-b74c-77402eb86a7f)
+  5. Finally add the CodDeploy application name and deployment group name to the deploy stage and create the pipeline.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/c3bfc568-830b-415c-b7dc-164aa46d199d)
+  6. This will trigger the pipeline and will build the project and dploy it on the EC2 seerver we created using Nginx. This should result in a successful deployment if everything is working as intended.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/7402d648-07c8-4171-81dc-c7336d1f766c)
+
+
 
