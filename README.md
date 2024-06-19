@@ -6,6 +6,14 @@
   3. In my case I'm using a repository from my GitHub profile.
   4. Be sure to include a buildspec.yml and an appspec.yml file, which will be required for code-build and code-deploy.
 
+## Create a Buildspec.yml and appspec.yml file to configure your project on Cloud.
+  1. You'll need a buildspec.yml file to include all the build operations to be performed while building on Cloud. It will look something like this.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/c175310b-a915-460a-b20f-714663199104)
+  3. You'll also need an appspec.yml file to configure your deployment over cloud.
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/7dc0c8e7-fcda-4453-921b-8be5d988f7ca)
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/0d27e36b-522e-4774-a3c1-542781a91eb3)
+  ![image](https://github.com/Zatch07/Web-Deployment-CI-CD-Pipeline-using-AWS-and-Github/assets/56155256/ad1b88a4-0faf-4d84-9b15-1eee8f469045)
+
 ## Create a new build project in AWS CodeBuild
   1. Give your project a name.
   2. Set the source as from where you would like to import your code for build purposes.
